@@ -16,7 +16,7 @@ public class GenerateReport {
        
         InputStream is=GenerateReport.class.getClassLoader().getResourceAsStream("report.jrxml");
         
-        System.out.println("Stream "+is);
+      
         JasperReport jasperReport= JasperCompileManager.compileReport(is);
         JasperPrint jasperPrint= JasperFillManager.fillReport(jasperReport, null, new JRTableModelDataSource(tableModelData()));
         JasperViewer jasperViewer = new JasperViewer(jasperPrint);
